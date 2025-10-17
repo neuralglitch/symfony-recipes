@@ -1,0 +1,6 @@
+framework:
+  asset_mapper:
+    paths:
+      # UX Bootstrap package assets
+      - 'vendor/neuralglitch/ux-bootstrap/assets/'
+
