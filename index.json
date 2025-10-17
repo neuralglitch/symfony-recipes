@@ -6,6 +6,9 @@
         ],
         "neuralglitch/make-bundle": [
             "0.1"
+        ],
+        "neuralglitch/ux-bootstrap": [
+            "0.1"
         ]
     },
     "recipe-conflicts": [],
@@ -13,7 +16,7 @@
         "splits": []
     },
     "branch": "main",
-    "is_contrib": false,
+    "is_contrib": true,
     "_links": {
         "repository": "github.com/neuralglitch/symfony-recipes",
         "origin_template": "{package}:{version}@github.com/neuralglitch/symfony-recipes:main",
