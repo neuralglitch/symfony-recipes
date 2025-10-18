@@ -30,6 +30,11 @@
                         "position": "after_target",
                         "target": "<head>",
                         "warn_if_missing": true
+                    },
+                    {
+                        "file": "templates/base.html.twig",
+                        "content": "{% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ ... }}\"{% endif %}",
+                        "target": "<html"
                     }
                 ],
                 "post-install-output": [
