@@ -2,23 +2,29 @@
     "bundles": {
         "NeuralGlitch\\UxBootstrap\\NeuralGlitchUxBootstrapBundle": ["all"]
     },
-    "copy-from-recipe": {
-        "config/": "%CONFIG_DIR%/",
-        "assets/": "%SRC_DIR%/assets/",
-        "importmap.php": "%SRC_DIR%/importmap-ux-bootstrap.php"
+    "copy-from-package": {
+        "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml"
     },
     "add-lines": [
         {
             "file": "assets/bootstrap.js",
-            "content": "\n// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from './controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
+            "content": "\n// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from '@neuralglitch/ux-bootstrap/controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
             "position": "after_target",
             "target": "const app = startStimulusApp();"
         },
         {
-            "file": "importmap.php",
-            "content": "\n    // Include UX Bootstrap controllers (auto-added by Flex recipe)\n    ...require __DIR__ . '/importmap-ux-bootstrap.php',",
-            "position": "before_target",
-            "target": "];"
+            "file": "config/packages/asset_mapper.yaml",
+            "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets",
+            "position": "after_target",
+            "target": "paths:",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/base.html.twig",
+            "content": "\n    {% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}",
+            "position": "after_target",
+            "target": "<head>",
+            "warn_if_missing": true
         }
     ],
     "post-install-output": [
@@ -29,11 +35,11 @@
         "",
         "  <fg=blue>What was automatically configured:</>",
         "    ✅ Bundle registered in <fg=green>config/bundles.php</>",
-        "    ✅ Default config created: <fg=green>config/packages/ux_bootstrap.yaml</>",
+        "    ✅ Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
         "    ✅ AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
-        "    ✅ Stimulus controllers registered: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
-        "    ✅ ImportMap entries added: <fg=green>importmap-ux-bootstrap.php</>",
-        "    ✅ Bootstrap.js updated to load controllers",
+        "    ✅ Controllers auto-discovered via AssetMapper",
+        "    ✅ Bootstrap.js updated to register controllers",
+        "    ✅ Base template updated to include theme switcher partial",
         "",
         "  <fg=blue>Available now:</>",
         "    • 60+ Bootstrap 5.3 Twig components",
@@ -70,7 +76,7 @@
         "    <fg=green><twig:bs:button variant=\"primary\">Hello!</twig:bs:button></>",
         "    <fg=green><twig:bs:theme mode=\"button-icon\" /></>",
         "",
-        "  <fg=green>💡 Tip:</> Customize defaults in config/packages/ux_bootstrap.yaml",
+        "  <fg=green>💡 Tip:</> Customize component defaults in <fg=cyan>config/packages/ux_bootstrap.yaml</>",
         ""
     ]
 }
