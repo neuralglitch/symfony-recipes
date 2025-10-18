@@ -25,6 +25,13 @@
             "position": "after_target",
             "target": "<head>",
             "warn_if_missing": true
+        },
+        {
+            "file": "templates/base.html.twig",
+            "content": "\n        {% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ app.request.attributes.get('theme') }}\" style=\"color-scheme: {{ app.request.attributes.get('theme') }};\"{% endif %}",
+            "position": "after_target",
+            "target": "<html",
+            "warn_if_missing": true
         }
     ],
     "post-install-output": [
