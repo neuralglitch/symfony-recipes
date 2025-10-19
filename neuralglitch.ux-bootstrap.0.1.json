@@ -20,7 +20,7 @@
                     },
                     {
                         "file": "config/packages/asset_mapper.yaml",
-                        "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets",
+                        "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets\n",
                         "position": "after_target",
                         "target": "paths:",
                         "warn_if_missing": true
@@ -34,8 +34,10 @@
                     },
                     {
                         "file": "templates/base.html.twig",
-                        "content": "{% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ ... }}\"{% endif %}",
-                        "target": "<html"
+                        "content": "\n        {% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ app.request.attributes.get('theme') }}\" style=\"color-scheme: {{ app.request.attributes.get('theme') }};\"{% endif %}",
+                        "position": "after_target",
+                        "target": "<html",
+                        "warn_if_missing": true
                     }
                 ],
                 "post-install-output": [
@@ -48,7 +50,7 @@
                     "    ✅ Bundle registered in <fg=green>config/bundles.php</>",
                     "    ✅ Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
                     "    ✅ AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
-                    "    ✅ Controllers auto-discovered via AssetMapper",
+                    "    ✅ Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
                     "    ✅ Bootstrap.js updated to register controllers",
                     "    ✅ Base template updated to include theme switcher partial",
                     "",
@@ -96,4 +98,3 @@
         }
     }
 }
-
