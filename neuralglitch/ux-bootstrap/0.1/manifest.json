@@ -3,12 +3,13 @@
         "NeuralGlitch\\UxBootstrap\\NeuralGlitchUxBootstrapBundle": ["all"]
     },
     "copy-from-package": {
-        "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml"
+        "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml",
+                    "assets/controllers/ux_bootstrap_controllers.js": "%SRC_DIR%/assets/controllers/ux_bootstrap_controllers.js"
     },
     "add-lines": [
         {
             "file": "assets/bootstrap.js",
-            "content": "\n// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from '@neuralglitch/ux-bootstrap/controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
+            "content": "\n// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from './controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
             "position": "after_target",
             "target": "const app = startStimulusApp();"
         },
