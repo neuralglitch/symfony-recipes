@@ -4,7 +4,7 @@
     },
     "copy-from-package": {
         "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml",
-                    "assets/controllers/ux_bootstrap_controllers.js": "%SRC_DIR%/assets/controllers/ux_bootstrap_controllers.js"
+        "assets/controllers/ux_bootstrap_controllers.js": "%SRC_DIR%/assets/controllers/ux_bootstrap_controllers.js"
     },
     "add-lines": [
         {
@@ -15,7 +15,7 @@
         },
         {
             "file": "config/packages/asset_mapper.yaml",
-            "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets",
+            "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets\n",
             "position": "after_target",
             "target": "paths:",
             "warn_if_missing": true
