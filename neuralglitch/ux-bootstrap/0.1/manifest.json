@@ -20,6 +20,13 @@
             "target": "    ],"
         },
         {
+            "file": "config/packages/asset_mapper.yaml",
+            "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/'",
+            "position": "after_target",
+            "target": "      - 'assets/'",
+            "warn_if_missing": false
+        },
+        {
             "file": "templates/base.html.twig",
             "content": "    {% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}",
             "position": "after_target",
