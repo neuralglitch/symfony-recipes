@@ -2,9 +2,6 @@
     "bundles": {
         "NeuralGlitch\\UxBootstrap\\NeuralGlitchUxBootstrapBundle": ["all"]
     },
-    "copy-from-recipe": {
-        "assets/": "%SRC_DIR%/assets/"
-    },
     "copy-from-package": {
         "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml"
     },
