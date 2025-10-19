@@ -4,8 +4,7 @@
     },
     "copy-from-package": {
         "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml",
-        "assets/controllers/ux_bootstrap_controllers.js": "assets/controllers/ux_bootstrap_controllers.js",
-        "importmap.php": "importmap-ux-bootstrap.php"
+        "assets/controllers/ux_bootstrap_controllers.js": "assets/controllers/ux_bootstrap_controllers.js"
     },
     "add-lines": [
         {
@@ -16,7 +15,7 @@
         },
         {
             "file": "importmap.php",
-            "content": "\n    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/importmap-ux-bootstrap.php',",
+            "content": "    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',\n",
             "position": "before_target",
             "target": "];"
         },
@@ -44,6 +43,7 @@
         "  <fg=blue>What was automatically configured:</>",
         "    ✅ Bundle registered in <fg=green>config/bundles.php</>",
         "    ✅ Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
+        "    ✅ ImportMap entries included from vendor",
         "    ✅ AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
         "    ✅ Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
         "    ✅ Bootstrap.js updated to register controllers",
