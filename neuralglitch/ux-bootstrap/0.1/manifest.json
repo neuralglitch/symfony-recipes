@@ -15,7 +15,7 @@
         },
         {
             "file": "config/packages/asset_mapper.yaml",
-            "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets\n",
+            "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets",
             "position": "after_target",
             "target": "paths:",
             "warn_if_missing": true
