@@ -20,9 +20,9 @@
                     },
                     {
                         "file": "importmap.php",
-                        "content": "    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',",
+                        "content": "\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',",
                         "position": "before_target",
-                        "target": "];"
+                        "target": "\n];"
                     },
                     {
                         "file": "templates/base.html.twig",
