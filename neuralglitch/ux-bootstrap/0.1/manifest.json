@@ -2,9 +2,11 @@
     "bundles": {
         "NeuralGlitch\\UxBootstrap\\NeuralGlitchUxBootstrapBundle": ["all"]
     },
+    "copy-from-recipe": {
+        "assets/": "%SRC_DIR%/assets/"
+    },
     "copy-from-package": {
-        "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml",
-        "assets/controllers/ux_bootstrap_controllers.js": "%SRC_DIR%/assets/controllers/ux_bootstrap_controllers.js"
+        "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml"
     },
     "add-lines": [
         {
@@ -22,9 +24,9 @@
         },
         {
             "file": "templates/base.html.twig",
-            "content": "{% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}\n    ",
+            "content": "\n    {% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}",
             "position": "after_target",
-            "target": "<head>\n",
+            "target": "<head>",
             "warn_if_missing": true
         },
         {
