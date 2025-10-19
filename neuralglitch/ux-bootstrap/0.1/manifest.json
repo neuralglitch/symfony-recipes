@@ -15,10 +15,10 @@
         },
         {
             "file": "config/packages/asset_mapper.yaml",
-            "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets",
-            "position": "after_target",
-            "target": "paths:",
-            "warn_if_missing": true
+            "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets\n",
+            "position": "before_target",
+            "target": "      - 'assets/'",
+            "warn_if_missing": false
         },
         {
             "file": "templates/base.html.twig",
@@ -45,7 +45,7 @@
         "    ✅ Bundle registered in <fg=green>config/bundles.php</>",
         "    ✅ Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
         "    ✅ AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
-        "    ✅ Controllers auto-discovered via AssetMapper",
+        "    ✅ Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
         "    ✅ Bootstrap.js updated to register controllers",
         "    ✅ Base template updated to include theme switcher partial",
         "",
