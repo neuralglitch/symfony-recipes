@@ -20,10 +20,10 @@
                     },
                     {
                         "file": "config/packages/asset_mapper.yaml",
-                        "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets",
-                        "position": "after_target",
-                        "target": "paths:",
-                        "warn_if_missing": true
+                        "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/' # UX Bootstrap package assets\n",
+                        "position": "before_target",
+                        "target": "      - 'assets/'",
+                        "warn_if_missing": false
                     },
                     {
                         "file": "templates/base.html.twig",
