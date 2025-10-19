@@ -7,6 +7,9 @@
                         "all"
                     ]
                 },
+                "copy-from-recipe": {
+                    "assets/controllers/ux_bootstrap_controllers.js": "%SRC_DIR%/assets/controllers/ux_bootstrap_controllers.js"
+                },
                 "copy-from-package": {
                     "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml"
                 },
