@@ -20,9 +20,16 @@
                     },
                     {
                         "file": "importmap.php",
-                        "content": "\n\n    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',",
+                        "content": "    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',",
                         "position": "after_target",
                         "target": "    ],"
+                    },
+                    {
+                        "file": "config/packages/asset_mapper.yaml",
+                        "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/'",
+                        "position": "after_target",
+                        "target": "      - 'assets/'",
+                        "warn_if_missing": false
                     },
                     {
                         "file": "templates/base.html.twig",
@@ -49,6 +56,7 @@
                     "    ✅ Bundle registered in <fg=green>config/bundles.php</>",
                     "    ✅ Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
                     "    ✅ ImportMap entries included from vendor",
+                    "    ✅ AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
                     "    ✅ Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
                     "    ✅ Bootstrap.js updated to register controllers",
                     "    ✅ Base template updated to include theme switcher partial",
