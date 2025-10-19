@@ -9,8 +9,7 @@
                 },
                 "copy-from-package": {
                     "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml",
-                    "assets/controllers/ux_bootstrap_controllers.js": "assets/controllers/ux_bootstrap_controllers.js",
-                    "importmap.php": "importmap-ux-bootstrap.php"
+                    "assets/controllers/ux_bootstrap_controllers.js": "assets/controllers/ux_bootstrap_controllers.js"
                 },
                 "add-lines": [
                     {
@@ -21,16 +20,9 @@
                     },
                     {
                         "file": "importmap.php",
-                        "content": "\n    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/importmap-ux-bootstrap.php',",
+                        "content": "    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',\n",
                         "position": "before_target",
                         "target": "];"
-                    },
-                    {
-                        "file": "config/packages/asset_mapper.yaml",
-                        "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/'",
-                        "position": "after_target",
-                        "target": "      - 'assets/'",
-                        "warn_if_missing": false
                     },
                     {
                         "file": "templates/base.html.twig",
@@ -56,8 +48,7 @@
                     "  <fg=blue>What was automatically configured:</>",
                     "    ✅ Bundle registered in <fg=green>config/bundles.php</>",
                     "    ✅ Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
-                    "    ✅ ImportMap entries copied: <fg=green>importmap-ux-bootstrap.php</>",
-                    "    ✅ AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
+                    "    ✅ ImportMap entries included from vendor",
                     "    ✅ Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
                     "    ✅ Bootstrap.js updated to register controllers",
                     "    ✅ Base template updated to include theme switcher partial",
