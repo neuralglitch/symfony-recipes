@@ -20,7 +20,7 @@
                     },
                     {
                         "file": "importmap.php",
-                        "content": "    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',\n",
+                        "content": "    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',",
                         "position": "before_target",
                         "target": "];"
                     },
