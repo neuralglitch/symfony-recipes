@@ -16,27 +16,27 @@
                 "add-lines": [
                     {
                         "file": "assets/bootstrap.js",
-                        "content": "\n// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from './controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
+                        "content": "// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from './controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
                         "position": "after_target",
                         "target": "const app = startStimulusApp();"
                     },
                     {
                         "file": "config/packages/asset_mapper.yaml",
-                        "content": "\n      - 'vendor/neuralglitch/ux-bootstrap/assets/'",
+                        "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/'",
                         "position": "after_target",
                         "target": "      - 'assets/'",
                         "warn_if_missing": false
                     },
                     {
                         "file": "templates/base.html.twig",
-                        "content": "\n    {% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}",
+                        "content": "    {% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}",
                         "position": "after_target",
                         "target": "<head>",
                         "warn_if_missing": true
                     },
                     {
                         "file": "templates/base.html.twig",
-                        "content": "\n        {% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ app.request.attributes.get('theme') }}\" style=\"color-scheme: {{ app.request.attributes.get('theme') }};\"{% endif %}>",
+                        "content": "        {% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ app.request.attributes.get('theme') }}\" style=\"color-scheme: {{ app.request.attributes.get('theme') }};\"{% endif %}>",
                         "position": "after_target",
                         "target": "<html lang=\"en\"",
                         "warn_if_missing": true
