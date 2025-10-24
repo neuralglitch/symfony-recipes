@@ -32,13 +32,6 @@
             "position": "after_target",
             "target": "<head>",
             "warn_if_missing": true
-        },
-        {
-            "file": "templates/base.html.twig",
-            "content": "        {% if app.request.attributes.get('theme') %} data-bs-theme=\"{{ app.request.attributes.get('theme') }}\" style=\"color-scheme: {{ app.request.attributes.get('theme') }};\"{% endif %}>",
-            "position": "after_target",
-            "target": "<html lang=\"en\"",
-            "warn_if_missing": true
         }
     ],
     "post-install-output": [
@@ -55,6 +48,7 @@
         "    ✅ Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
         "    ✅ Bootstrap.js updated to register controllers",
         "    ✅ Base template updated to include theme switcher partial",
+        "    ✅ Install command available: <fg=green>php bin/console ux-bootstrap:install</>",
         "",
         "  <fg=blue>Available now:</>",
         "    • 60+ Bootstrap 5.3 Twig components",
@@ -78,6 +72,16 @@
         "",
         "    <fg=yellow>Floating UI:</> (OPTIONAL - only for Tour & Command Palette components)",
         "      <fg=green>php bin/console importmap:require @floating-ui/dom</>",
+        "",
+        "  <fg=blue>Theme Installation (Optional):</>",
+        "",
+        "    For automatic theme support in your templates, run:",
+        "      <fg=green>php bin/console ux-bootstrap:install</>",
+        "",
+        "    This command will:",
+        "      • Find your base templates automatically",
+        "      • Add theme attributes to <html> tags",
+        "      • Support multiple templates in one run",
         "",
         "  <fg=blue>After installing peer dependencies:</>",
         "    <fg=green>php bin/console asset-map:compile</>",
