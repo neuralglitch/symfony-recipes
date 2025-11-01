@@ -39,15 +39,13 @@ jobs:
             -   name: Update Flex endpoint
                 run: |
                     mkdir .github/flex-endpoint
-                    git ls-tree HEAD neuralglitch/*/*/ | php .github/recipes-checker-main/run generate:flex-endpoint neuralglitch/symfony-recipes main flex/main .github/flex-endpoint --contrib
+                    git ls-tree HEAD */*/* | php .github/recipes-checker-main/run generate:flex-endpoint neuralglitch/symfony-recipes main flex/main .github/flex-endpoint --contrib
                     git switch flex/main
                     git rm -q *.json || true
                     mv .github/flex-endpoint/*.json .
                     git add *.json
-                    if [ -d .github/flex-endpoint/archived ]; then
-                      cp -a .github/flex-endpoint/archived .
-                      git add archived/
-                    fi
+                    cp -a .github/flex-endpoint/archived .
+                    git add archived/
                     php .github/recipes-checker-main/run generate:recipes-readme index.json --contrib > RECIPES.md
                     git add RECIPES.md
                     git commit -m 'Update Flex endpoint' || true
