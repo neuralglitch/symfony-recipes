@@ -1,0 +1,18 @@
+{
+    "manifests": {
+        "neuralglitch/make-bundle": {
+            "manifest": {
+                "bundles": {
+                    "NeuralGlitch\\MakeBundle\\MakeBundleBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "config/packages/make_bundle.yaml": "config/packages/make_bundle.yaml"
+                }
+            },
+            "files": [],
+            "ref": "38f144c87d99506811f5820e00038c1f0e2f7665"
+        }
+    }
+}

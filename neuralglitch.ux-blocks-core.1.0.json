@@ -1,0 +1,38 @@
+{
+    "manifests": {
+        "neuralglitch/ux-blocks-core": {
+            "manifest": {
+                "manifest": {
+                    "copy-from-recipe": {
+                        "config/packages/ux_blocks.yaml": "%CONFIG_DIR%/packages/ux_blocks.yaml",
+                        "config/packages/ux_blocks_core.yaml": "%CONFIG_DIR%/packages/ux_blocks_core.yaml",
+                        "config/packages/twig_component.yaml": "%CONFIG_DIR%/packages/twig_component.yaml"
+                    },
+                    "composer-scripts": {
+                        "auto-scripts": {
+                            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+                        },
+                        "post-install-cmd": [
+                            "@auto-scripts"
+                        ],
+                        "post-update-cmd": [
+                            "@auto-scripts"
+                        ]
+                    },
+                    "post-install-output": [
+                        "  * Importmap of the package will be merged automatically:",
+                        "    import map includes vendor/neuralglitch/ux-blocks-core/importmap.php"
+                    ],
+                    "imports": [
+                        {
+                            "resource": "config/importmap.php",
+                            "content": "<?php return array_merge(require __DIR__.'/../vendor/neuralglitch/ux-blocks-core/importmap.php', []);"
+                        }
+                    ]
+                }
+            },
+            "files": [],
+            "ref": "b7d7acf16a7658b613143dbf024ba71f47575026"
+        }
+    }
+}

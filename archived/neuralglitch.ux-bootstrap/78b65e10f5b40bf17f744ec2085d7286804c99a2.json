@@ -1,0 +1,111 @@
+{
+    "manifests": {
+        "neuralglitch/ux-bootstrap": {
+            "manifest": {
+                "bundles": {
+                    "NeuralGlitch\\UxBootstrap\\NeuralGlitchUxBootstrapBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "config/packages/ux_bootstrap.yaml": "%CONFIG_DIR%/packages/ux_bootstrap.yaml",
+                    "assets/controllers/ux_bootstrap_controllers.js": "assets/controllers/ux_bootstrap_controllers.js"
+                },
+                "add-lines": [
+                    {
+                        "file": "assets/bootstrap.js",
+                        "content": "// UX Bootstrap Controllers (auto-added by Flex recipe)\nimport { registerUxBootstrapControllers } from './controllers/ux_bootstrap_controllers.js';\nregisterUxBootstrapControllers(app);",
+                        "position": "after_target",
+                        "target": "const app = startStimulusApp();"
+                    },
+                    {
+                        "file": "importmap.php",
+                        "content": "    // UX Bootstrap importmap entries\n    ...require __DIR__ . '/vendor/neuralglitch/ux-bootstrap/importmap.php',",
+                        "position": "after_target",
+                        "target": "    ],"
+                    },
+                    {
+                        "file": "config/packages/asset_mapper.yaml",
+                        "content": "      - 'vendor/neuralglitch/ux-bootstrap/assets/'",
+                        "position": "after_target",
+                        "target": "      - 'assets/'",
+                        "warn_if_missing": false
+                    },
+                    {
+                        "file": "templates/base.html.twig",
+                        "content": "    {% include '@NeuralGlitchUxBootstrap/partials/bootstrap_theme_head.html.twig' %}",
+                        "position": "after_target",
+                        "target": "<head>",
+                        "warn_if_missing": true
+                    }
+                ],
+                "post-install-output": [
+                    "",
+                    "<bg=blue;fg=white>                                                          </>",
+                    "<bg=blue;fg=white>  \u2705 Symfony UX Bootstrap installed successfully! \ud83c\udf89     </>",
+                    "<bg=blue;fg=white>                                                          </>",
+                    "",
+                    "  <fg=blue>What was automatically configured:</>",
+                    "    \u2705 Bundle registered in <fg=green>config/bundles.php</>",
+                    "    \u2705 Default config copied: <fg=green>config/packages/ux_bootstrap.yaml</>",
+                    "    \u2705 ImportMap entries included from vendor",
+                    "    \u2705 AssetMapper path added: <fg=green>config/packages/asset_mapper.yaml</>",
+                    "    \u2705 Controllers copied: <fg=green>assets/controllers/ux_bootstrap_controllers.js</>",
+                    "    \u2705 Bootstrap.js updated to register controllers",
+                    "    \u2705 Base template updated to include theme switcher partial",
+                    "    \u2705 Install command available: <fg=green>php bin/console ux-bootstrap:install</>",
+                    "",
+                    "  <fg=blue>Available now:</>",
+                    "    \u2022 60+ Bootstrap 5.3 Twig components",
+                    "    \u2022 23 Stimulus controllers (ready to use)",
+                    "",
+                    "  <fg=yellow>\u26a0\ufe0f  PEER DEPENDENCIES (Install if not already present):</>",
+                    "",
+                    "  This package requires the following dependencies to work properly.",
+                    "  They are NOT automatically installed to avoid version conflicts.",
+                    "",
+                    "  <fg=blue>Required dependencies:</>",
+                    "",
+                    "    <fg=yellow>Bootstrap 5.3:</> (REQUIRED - for all components)",
+                    "      <fg=green>php bin/console importmap:require bootstrap</>",
+                    "",
+                    "    <fg=yellow>Popper.js:</> (REQUIRED - for tooltips, popovers, dropdowns)",
+                    "      <fg=green>php bin/console importmap:require @popperjs/core</>",
+                    "",
+                    "    <fg=yellow>Stimulus:</> (REQUIRED - for interactive Stimulus controllers)",
+                    "      <fg=green>php bin/console importmap:require @hotwired/stimulus</>",
+                    "",
+                    "    <fg=yellow>Floating UI:</> (OPTIONAL - only for Tour & Command Palette components)",
+                    "      <fg=green>php bin/console importmap:require @floating-ui/dom</>",
+                    "",
+                    "  <fg=blue>Theme Installation (Optional):</>",
+                    "",
+                    "    For automatic theme support in your templates, run:",
+                    "      <fg=green>php bin/console ux-bootstrap:install</>",
+                    "",
+                    "    This command will:",
+                    "      \u2022 Find your base templates automatically",
+                    "      \u2022 Add theme attributes to <html> tags",
+                    "      \u2022 Support multiple templates in one run",
+                    "",
+                    "  <fg=blue>After installing peer dependencies:</>",
+                    "    <fg=green>php bin/console asset-map:compile</>",
+                    "    <fg=yellow>Then hard refresh your browser (Cmd+Shift+R)</>",
+                    "",
+                    "  <fg=blue>Documentation & Quick Start:</>",
+                    "    \u2022 GitHub: <fg=cyan>https://github.com/neuralglitch/ux-bootstrap</>",
+                    "    \u2022 Docs: <fg=cyan>vendor/neuralglitch/ux-bootstrap/README.md</>",
+                    "",
+                    "  <fg=yellow>Quick test</> - Add to any Twig template:",
+                    "    <fg=green><twig:bs:button variant=\"primary\">Hello!</twig:bs:button></>",
+                    "    <fg=green><twig:bs:theme mode=\"button-icon\" /></>",
+                    "",
+                    "  <fg=green>\ud83d\udca1 Tip:</> Customize component defaults in <fg=cyan>config/packages/ux_bootstrap.yaml</>",
+                    ""
+                ]
+            },
+            "files": [],
+            "ref": "78b65e10f5b40bf17f744ec2085d7286804c99a2"
+        }
+    }
+}

@@ -1,6 +1,25 @@
 {
     "aliases": [],
-    "recipes": [],
+    "recipes": {
+        "neuralglitch/bootstrap-bridge": [
+            "0.1"
+        ],
+        "neuralglitch/bootstrap-theme-switch": [
+            "0.1"
+        ],
+        "neuralglitch/google-fonts": [
+            "1.0"
+        ],
+        "neuralglitch/make-bundle": [
+            "0.1"
+        ],
+        "neuralglitch/ux-blocks-core": [
+            "1.0"
+        ],
+        "neuralglitch/ux-bootstrap": [
+            "0.1"
+        ]
+    },
     "recipe-conflicts": [],
     "versions": [],
     "branch": "main",
