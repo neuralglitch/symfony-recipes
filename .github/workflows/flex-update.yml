@@ -40,7 +40,7 @@ jobs:
             -   name: Generate Flex endpoint
                 run: |
                     mkdir -p .github/flex-endpoint
-                    git ls-tree HEAD neuralglitch/*/*/ | php .github/recipes-checker-main/run generate:flex-endpoint neuralglitch/symfony-recipes main flex/main .github/flex-endpoint .github/versions.json --contrib
+                    git ls-tree HEAD neuralglitch/*/*/ | php .github/recipes-checker-main/run generate:flex-endpoint neuralglitch/symfony-recipes main flex/main .github/flex-endpoint --contrib
 
             -   name: Switch to flex/main branch
                 run: |
