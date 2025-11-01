@@ -1,0 +1,59 @@
+name: Update Flex endpoint
+
+on:
+    push:
+        branches:
+            - main
+
+defaults:
+    run:
+        shell: bash
+
+jobs:
+    flex-update:
+        name: Update Flex endpoint
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+
+            -   name: Set up PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 8.2
+                    coverage: none
+
+            -   name: Install recipes-checker dependencies
+                run: |
+                    cd .github/recipes-checker-main
+                    composer install --no-dev --no-progress
+
+            -   name: Generate Flex endpoint
+                run: |
+                    mkdir -p .github/flex-endpoint
+                    git ls-tree HEAD neuralglitch/*/*/ | php .github/recipes-checker-main/run generate:flex-endpoint neuralglitch/symfony-recipes main flex/main .github/flex-endpoint .github/versions.json --contrib
+
+            -   name: Switch to flex/main branch
+                run: |
+                    git config user.name "github-action[bot]"
+                    git config user.email ""
+                    git fetch origin flex/main:flex/main || git branch flex/main
+                    git switch flex/main
+
+            -   name: Update files
+                run: |
+                    rm -f *.json
+                    mv .github/flex-endpoint/*.json .
+                    rm -rf archived/
+                    mv .github/flex-endpoint/archived .
+                    php .github/recipes-checker-main/run generate:recipes-readme index.json --contrib > RECIPES.md
+
+            -   name: Commit and push
+                run: |
+                    git add *.json archived/ RECIPES.md
+                    git commit -m "Update Flex endpoint" || true
+                    git push origin flex/main
+

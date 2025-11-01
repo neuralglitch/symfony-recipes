@@ -1,0 +1,23 @@
+{
+    "recipes": {
+        "neuralglitch/bootstrap-theme-switch": [
+            "0.1"
+        ],
+        "neuralglitch/google-fonts": [
+            "0.1"
+        ],
+        "neuralglitch/make-bundle": [
+            "0.1"
+        ],
+        "neuralglitch/ux-bootstrap": [
+            "0.1"
+        ]
+    },
+    "branch": "main",
+    "is_contrib": true,
+    "_links": {
+        "repository": "github.com/neuralglitch/symfony-recipes",
+        "origin_template": "{package}:{version}@github.com/neuralglitch/symfony-recipes:main",
+        "recipe_template": "https://api.github.com/repos/neuralglitch/symfony-recipes/contents/{package_dotted}.{version}.json?ref=flex/main"
+    }
+}

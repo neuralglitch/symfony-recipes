@@ -1,0 +1,6 @@
+  * <fg=blue>Follow these steps</> to use the <fg=green>Bootstrap Theme Switch:</>
+    1. Prepare the base template <comment>templates/base.html.twig</>.
+    2. Include one of the partial templates <comment>anywhere</>.
+    3. Build or serve the <comment>assets</>.
+
+  * <fg=blue>Read</> the documentation at <comment>https://github.com/neuralglitch/bootstrap-theme-switch/blob/master/README.md</>

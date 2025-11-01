@@ -1,0 +1,10 @@
+{
+    "bundles": {
+        "NeuralGlitch\\MakeBundle\\MakeBundleBundle": [
+            "all"
+        ]
+    },
+    "copy-from-package": {
+        "config/packages/make_bundle.yaml": "config/packages/make_bundle.yaml"
+    }
+}
