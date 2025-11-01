@@ -26,38 +26,28 @@ jobs:
                     php-version: 8.2
                     coverage: none
 
-            -   name: Download and install recipes-checker
+            -   name: Install tools
                 run: |
                     git config --global user.email ""
                     git config --global user.name "github-action[bot]"
-                    mkdir -p .github
                     cd .github
                     wget -q -O recipes-checker.zip https://codeload.github.com/symfony-tools/recipes-checker/zip/refs/heads/main
-                    unzip -q recipes-checker.zip
+                    unzip recipes-checker.zip
                     cd recipes-checker-main
-                    composer install --no-dev --no-progress
+                    composer install --ansi --no-dev
 
-            -   name: Generate Flex endpoint
+            -   name: Update Flex endpoint
                 run: |
-                    mkdir -p .github/flex-endpoint
+                    mkdir .github/flex-endpoint
                     git ls-tree HEAD neuralglitch/*/*/ | php .github/recipes-checker-main/run generate:flex-endpoint neuralglitch/symfony-recipes main flex/main .github/flex-endpoint --contrib
-
-            -   name: Switch to flex/main branch
-                run: |
-                    git fetch origin flex/main:flex/main || git branch flex/main
                     git switch flex/main
-
-            -   name: Update files
-                run: |
-                    rm -f *.json
+                    git rm -q *.json || true
                     mv .github/flex-endpoint/*.json .
-                    rm -rf archived/
-                    [ -d .github/flex-endpoint/archived ] && mv .github/flex-endpoint/archived . || true
+                    git add *.json
+                    cp -a .github/flex-endpoint/archived . 2>/dev/null || true
+                    git add archived/ 2>/dev/null || true
                     php .github/recipes-checker-main/run generate:recipes-readme index.json --contrib > RECIPES.md
-
-            -   name: Commit and push
-                run: |
-                    git add *.json archived/ RECIPES.md
-                    git commit -m "Update Flex endpoint" || true
-                    git push origin flex/main
+                    git add RECIPES.md
+                    git commit -m 'Update Flex endpoint' || true
+                    git push origin -f flex/main
 
