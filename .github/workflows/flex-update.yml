@@ -52,7 +52,7 @@ jobs:
                     rm -f *.json
                     mv .github/flex-endpoint/*.json .
                     rm -rf archived/
-                    mv .github/flex-endpoint/archived .
+                    [ -d .github/flex-endpoint/archived ] && mv .github/flex-endpoint/archived . || true
                     php .github/recipes-checker-main/run generate:recipes-readme index.json --contrib > RECIPES.md
 
             -   name: Commit and push
