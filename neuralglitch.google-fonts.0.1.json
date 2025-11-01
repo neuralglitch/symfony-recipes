@@ -1,0 +1,45 @@
+{
+    "manifests": {
+        "neuralglitch/google-fonts": {
+            "manifest": {
+                "bundles": {
+                    "NeuralGlitch\\GoogleFonts\\GoogleFontsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "config/packages/google_fonts.yaml": "%CONFIG_DIR%/packages/google_fonts.yaml"
+                },
+                "env": {
+                    "GOOGLE_FONTS_API_KEY": ""
+                },
+                "post-install-output": [
+                    "<bg=blue;fg=white> What's next for Google Fonts package? </>",
+                    "",
+                    "  * <fg=blue>Add fonts to your templates</>",
+                    "",
+                    "    <comment>// templates/base.html.twig (inside <head>)</comment>",
+                    "    {{ google_fonts('Ubuntu', '400 700', 'normal') }}",
+                    "    {{ google_fonts('JetBrains Mono', '400', 'normal', null, true) }}",
+                    "",
+                    "  * <fg=blue>Optional: Configure API key for search/import</>",
+                    "",
+                    "    <comment># .env.local</comment>",
+                    "    GOOGLE_FONTS_API_KEY=<your_api_key>",
+                    "",
+                    "    Get your free API key at:",
+                    "    https://console.cloud.google.com/apis/credentials",
+                    "",
+                    "  * <fg=blue>Lock fonts for production</>",
+                    "    $ php bin/console gfonts:lock",
+                    "",
+                    "  * <fg=blue>Read the documentation</>",
+                    "    https://github.com/neuralglitch/google-fonts",
+                    ""
+                ]
+            },
+            "files": [],
+            "ref": "4d5a923fc12b6afe74fcb7ad045f53ec39f36dda"
+        }
+    }
+}
