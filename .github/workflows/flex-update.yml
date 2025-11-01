@@ -26,9 +26,15 @@ jobs:
                     php-version: 8.2
                     coverage: none
 
-            -   name: Install recipes-checker dependencies
+            -   name: Download and install recipes-checker
                 run: |
-                    cd .github/recipes-checker-main
+                    git config --global user.email ""
+                    git config --global user.name "github-action[bot]"
+                    mkdir -p .github
+                    cd .github
+                    wget -q -O recipes-checker.zip https://codeload.github.com/symfony-tools/recipes-checker/zip/refs/heads/main
+                    unzip -q recipes-checker.zip
+                    cd recipes-checker-main
                     composer install --no-dev --no-progress
 
             -   name: Generate Flex endpoint
@@ -38,8 +44,6 @@ jobs:
 
             -   name: Switch to flex/main branch
                 run: |
-                    git config user.name "github-action[bot]"
-                    git config user.email ""
                     git fetch origin flex/main:flex/main || git branch flex/main
                     git switch flex/main
 
