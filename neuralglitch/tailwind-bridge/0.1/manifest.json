@@ -10,15 +10,17 @@
     "post-install-output": [
         "<bg=blue;fg=white> Tailwind Bridge installed! </>",
         "",
+        "  * <fg=blue>Add stylesheet to your base template</>",
+        "",
+        "    <comment>{# templates/base.html.twig (in <head>) #}</comment>",
+        "    <link rel=\"stylesheet\" href=\"{{ asset('input.built.css') }}\">",
+        "",
         "  * <fg=blue>Start Tailwind in watch mode</>",
         "",
         "    $ php bin/console tailwind:build --watch",
         "",
-        "  * <fg=blue>Customize your setup</>",
-        "",
-        "    Edit tailwind.config.js to customize:",
-        "",
         "  * <fg=blue>Read the documentation</>",
+        "",
         "    https://github.com/neuralglitch/tailwind-bridge",
         ""
     ]

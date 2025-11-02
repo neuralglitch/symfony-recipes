@@ -3,7 +3,6 @@
         "NeuralGlitch\\BootstrapBridge\\BootstrapBridgeBundle": ["all"]
     },
     "copy-from-package": {
-        "importmap-root.php": "%APP_DIR%/importmap.php",
         "assets/styles/_bootstrap.scss": "%APP_DIR%/assets/styles/_bootstrap.scss",
         "assets/styles/_variables.scss": "%APP_DIR%/assets/styles/_variables.scss",
         "assets/styles/_custom.scss": "%APP_DIR%/assets/styles/_custom.scss",

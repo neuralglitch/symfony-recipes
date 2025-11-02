@@ -1,14 +1,15 @@
 <div align="center">
 
 # Symfony Recipes
-Symfony Flex recipe repository of **neuralglit.ch**
 
-[![symfony/recipes](https://img.shields.io/badge/symfony-recipes-374151.svg?style=flat-square)](https://github.com/symfony/recipes)
-[![symfony/recipes-contrib](https://img.shields.io/badge/symfony-recipes--contrib-374151.svg?style=flat-square)](https://github.com/symfony/recipes-contrib)
+### Symfony Flex recipe repository of **neuralglit.ch**
 
-[![php](https://img.shields.io/badge/PHP->=8.0-4F5B93.svg?style=flat-square)](https://www.php.net)
-[![composer](https://img.shields.io/badge/composer-^2.1-D48822.svg?style=flat-square)](https://getcomposer.org)
-[![symfony](https://img.shields.io/badge/symfony/flex-^2-374151.svg?style=flat-square)](https://github.com/symfony/flex)
+[![symfony/recipes](https://img.shields.io/badge/symfony-recipes-374151.svg?style=flat)](https://github.com/symfony/recipes)
+[![symfony/recipes-contrib](https://img.shields.io/badge/symfony-recipes--contrib-374151.svg?style=flat)](https://github.com/symfony/recipes-contrib)
+
+[![php](https://img.shields.io/badge/PHP-^8.1-4F5B93.svg?style=flat)](https://www.php.net)
+[![composer](https://img.shields.io/badge/composer-^2.1-D48822.svg?style=flat)](https://getcomposer.org)
+[![symfony](https://img.shields.io/badge/symfony/flex-^2-374151.svg?style=flat)](https://github.com/symfony/flex)
 
 </div>
 
