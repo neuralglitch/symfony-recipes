@@ -1,6 +1,6 @@
 {
     "recipes": {
-        "neuralglitch/bootstrap-theme-switch": [
+        "neuralglitch/bootstrap-bridge": [
             "0.1"
         ],
         "neuralglitch/google-fonts": [
@@ -9,7 +9,7 @@
         "neuralglitch/make-bundle": [
             "0.1"
         ],
-        "neuralglitch/ux-bootstrap": [
+        "neuralglitch/tailwind-bridge": [
             "0.1"
         ]
     },

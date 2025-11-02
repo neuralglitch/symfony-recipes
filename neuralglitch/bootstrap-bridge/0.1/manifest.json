@@ -1,42 +1,63 @@
 {
-    "bundles": [
+    "bundles": {
+        "NeuralGlitch\\BootstrapBridge\\BootstrapBridgeBundle": ["all"]
+    },
+    "copy-from-package": {
+        "importmap-root.php": "%APP_DIR%/importmap.php",
+        "assets/styles/_bootstrap.scss": "%APP_DIR%/assets/styles/_bootstrap.scss",
+        "assets/styles/_variables.scss": "%APP_DIR%/assets/styles/_variables.scss",
+        "assets/styles/_custom.scss": "%APP_DIR%/assets/styles/_custom.scss",
+        "assets/styles/app.scss": "%APP_DIR%/assets/styles/app.scss",
+        "config/packages/symfonycasts_sass.yaml": "%CONFIG_DIR%/packages/symfonycasts_sass.yaml"
+    },
+    "add-lines": [
         {
-            "name": "NeuralGlitch\\BootstrapBridge\\BootstrapBridgeBundle"
+            "file": "config/packages/twig.yaml",
+            "content": "    form_themes:\n        - 'bootstrap_5_layout.html.twig'",
+            "position": "after_target",
+            "target": "twig:",
+            "warn_if_missing": false
+        },
+        {
+            "file": "assets/app.js",
+            "content": "// Import Bootstrap JS\nimport * as bootstrap from './vendor/bootstrap/bootstrap.index.js';\nwindow.bootstrap = bootstrap;\n\n// Import Bootstrap Bridge\nimport '../vendor/neuralglitch/bootstrap-bridge/assets/bootstrap-bridge.js';",
+            "position": "after_target",
+            "target": "import './bootstrap.js';",
+            "warn_if_missing": false
+        },
+        {
+            "file": "importmap.php",
+            "content": "    // Bootstrap Bridge importmap\n    ...require __DIR__ . '/vendor/neuralglitch/bootstrap-bridge/importmap.php',",
+            "position": "after_target",
+            "target": "    ],",
+            "warn_if_missing": false
+        },
+        {
+            "file": "config/packages/asset_mapper.yaml",
+            "content": "      - 'vendor/neuralglitch/bootstrap-bridge/assets/'",
+            "position": "after_target",
+            "target": "      - 'assets/'",
+            "warn_if_missing": false
         }
     ],
-    "copy-from-package": {
-        "importmap-root.php": "importmap.php",
-        "assets/styles/_bootstrap.scss": "assets/styles/_bootstrap.scss",
-        "assets/styles/_variables.scss": "assets/styles/_variables.scss",
-        "assets/styles/_custom.scss": "assets/styles/_custom.scss",
-        "assets/styles/app.scss": "assets/styles/app.scss",
-        "assets/app.js": "assets/app.js",
-        "config/packages/asset_mapper.yaml": "config/packages/asset_mapper.yaml",
-        "config/packages/symfonycasts_sass.yaml": "config/packages/symfonycasts_sass.yaml",
-        "config/packages/twig.yaml": "config/packages/twig.yaml",
-        "config/packages/monolog.yaml": "config/packages/monolog.yaml",
-        "config/packages/debug.yaml": "config/packages/debug.yaml"
-    },
     "post-install-output": [
-        "Bootstrap Bridge has been successfully installed!",
+        "<bg=blue;fg=white> Bootstrap Bridge installed! </>",
         "",
-        "Files created:",
-        "- assets/styles/bootstrap.scss - Main Bootstrap SCSS file",
-        "- assets/styles/_variables.scss - Bootstrap variables for customization",
-        "- assets/styles/app.scss - Main SCSS entry point",
+        "  * <fg=blue>Add importmap to your templates</>",
         "",
-        "Configuration files:",
-        "- config/packages/asset_mapper.yaml - Asset Mapper configuration",
-        "- config/packages/symfonycasts_sass.yaml - Sass Bundle configuration",
-        "- config/packages/twig.yaml - Twig Bootstrap form theme",
+        "    <comment>// templates/base.html.twig (inside <head>)</comment>",
+        "    {{ importmap('app') }}",
         "",
-        "Next steps:",
-        "1. Customize Bootstrap variables in assets/styles/_variables.scss",
-        "2. Add your custom styles in assets/styles/app.scss",
-        "3. Use {{ importmap('bootstrap-bridge') }} in your templates",
+        "  * <fg=blue>Optimize bundle size</>",
         "",
-        "Documentation: https://github.com/neuralglitch/bootstrap-bridge"
-    ],
-    "env": [],
-    "aliases": []
+        "    Edit: <comment>assets/styles/_bootstrap.scss</comment>",
+        "    Comment out unused components to reduce CSS from 200KB to 50KB!",
+        "",
+        "  * <fg=blue>Compile SCSS</>",
+        "    $ php bin/console sass:build",
+        "",
+        "  * <fg=blue>Read the documentation</>",
+        "    https://github.com/neuralglitch/bootstrap-bridge",
+        ""
+    ]
 }
