@@ -1,0 +1,35 @@
+{
+    "manifests": {
+        "neuralglitch/tailwind-bridge": {
+            "manifest": {
+                "bundles": {
+                    "NeuralGlitch\\TailwindBridge\\TailwindBridgeBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "config/packages/asset_mapper.yaml": "%CONFIG_DIR%/packages/asset_mapper.yaml",
+                    "config/packages/symfonycasts_tailwind.yaml": "%CONFIG_DIR%/packages/symfonycasts_tailwind.yaml",
+                    "tailwind.config.js": "%ROOT_DIR%/tailwind.config.js"
+                },
+                "post-install-output": [
+                    "<bg=blue;fg=white> Tailwind Bridge installed! </>",
+                    "",
+                    "  * <fg=blue>Start Tailwind in watch mode</>",
+                    "",
+                    "    $ php bin/console tailwind:build --watch",
+                    "",
+                    "  * <fg=blue>Customize your setup</>",
+                    "",
+                    "    Edit tailwind.config.js to customize:",
+                    "",
+                    "  * <fg=blue>Read the documentation</>",
+                    "    https://github.com/neuralglitch/tailwind-bridge",
+                    ""
+                ]
+            },
+            "files": [],
+            "ref": "3d7d9379fd9aeae19b4adcbbb6e5bc7c9a04b3a0"
+        }
+    }
+}

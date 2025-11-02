@@ -13,6 +13,9 @@
         "neuralglitch/make-bundle": [
             "0.1"
         ],
+        "neuralglitch/tailwind-bridge": [
+            "0.1"
+        ],
         "neuralglitch/ux-blocks-core": [
             "0.1"
         ],
