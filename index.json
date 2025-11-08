@@ -7,6 +7,9 @@
         "neuralglitch/bootstrap-theme-switch": [
             "0.1"
         ],
+        "neuralglitch/font-manager": [
+            "0.1"
+        ],
         "neuralglitch/google-fonts": [
             "0.1"
         ],
