@@ -3,6 +3,9 @@
         "neuralglitch/bootstrap-bridge": [
             "0.1"
         ],
+        "neuralglitch/font-manager": [
+            "0.1"
+        ],
         "neuralglitch/google-fonts": [
             "0.1"
         ],
