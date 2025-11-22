@@ -5,6 +5,9 @@
         ],
         "neuralglitch/google-fonts": [
             "0.1"
+        ],
+        "neuralglitch/omnia-ipsum": [
+            "0.1"
         ]
     },
     "branch": "main",
