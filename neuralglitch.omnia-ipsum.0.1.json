@@ -1,0 +1,40 @@
+{
+    "manifests": {
+        "neuralglitch/omnia-ipsum": {
+            "manifest": {
+                "bundles": {
+                    "NeuralGlitch\\OmniaIpsum\\OmniaIpsumBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "config/packages/omnia_ipsum.yaml": "%CONFIG_DIR%/packages/omnia_ipsum.yaml"
+                },
+                "post-install-output": [
+                    "<bg=blue;fg=white> Omnia Ipsum installed! </>",
+                    "",
+                    "  <fg=green>\u2713</> 5 image providers (Picsum, Placeholder, DummyImage, Placehold, UI Avatars)",
+                    "  <fg=green>\u2713</> Video provider (Google Cloud Storage, 13 professional clips)",
+                    "  <fg=green>\u2713</> Audio providers (SoundHelix music, Silence)",
+                    "  <fg=green>\u2713</> Lorem Ipsum text generation",
+                    "  <fg=green>\u2713</> FakerPHP integration (100+ formatters)",
+                    "",
+                    "  <fg=blue>Quick Start:</>",
+                    "",
+                    "     <comment>// In your Twig templates</comment>",
+                    "     {{ omnia_image(600, 400) }}",
+                    "     {{ omnia_avatar('John Doe', 100) }}",
+                    "     {{ omnia_video(1920, 1080) }}",
+                    "     {{ omnia_audio(10) }}",
+                    "     {{ lorem_paragraphs(3) }}",
+                    "     {{ fake('name') }}",
+                    "",
+                    "  <fg=blue>Documentation:</> <comment>https://github.com/neuralglitch/omnia-ipsum/blob/main/docs/quickstart.md</comment>",
+                    ""
+                ]
+            },
+            "files": [],
+            "ref": "9ff4376314d27d13f91f5095c636e508567f9170"
+        }
+    }
+}
