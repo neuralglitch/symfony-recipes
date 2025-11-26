@@ -1,0 +1,24 @@
+{
+    "bundles": {
+        "NeuralGlitch\\MakeBundle\\MakeBundleBundle": ["dev"]
+    },
+    "copy-from-package": {
+        "config/packages/make_bundle.yaml": "config/packages/make_bundle.yaml"
+    },
+    "post-install-output": [
+        "<bg=blue;fg=white> Make Bundle installed! </>",
+        "",
+        "  <fg=green>✓</> Bundle registered",
+        "",
+        "  <fg=blue>Quick Start:</>",
+        "",
+        "  <fg=yellow>1. Generate a bundle with interactive wizard</>",
+        "     <comment>bin/console make:bundle</comment>",
+        "",
+        "  <fg=yellow>2. Or use direct arguments</>",
+        "     <comment>bin/console make:bundle acme/awesome-utilities lib</comment>",
+        "",
+        "  <fg=blue>Documentation:</> <comment>https://github.com/neuralglitch/make-bundle</comment>",
+        ""
+    ]
+}
